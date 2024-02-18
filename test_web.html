@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+<meta charset="UTF-8">
+
+
+<!--img src="" alt="logo"-->
+<head>
+    <title>My code</title>
+    <!--<script src="script.js"></script>-->
+<hr>
+
+</head>
+
+<header>
+    <a href=""><b>Home</b></a>
+    <a href="">Projects</a>
+    <a href=""> Liste employés</a>
+    <a href="">Inscription</a>
+
+</header>
+<body>
+    <table>
+        <tr align="center">
+            
+            <td colspan="3"><img src="C:\Users\User\Downloads\AI_1.png" alt="logo page" height="100" width="150"></td>
+
+        </tr>
+        <tr align="center">
+            
+            <td colspan="3"><b>Bienvenue sur notre site !</b></td>
+        </tr>
+        <tr align="center">
+            
+            <td colspan="3">Nous proposons une gestion des taches dans votre entreprise</td>
+        </tr>
+        <tr align="center">
+            
+            <td colspan="3"><b>Nos valeurs </b></td>
+        </tr>
+        <tr align="center">
+            <td><img src="C:\Users\User\Downloads\AI_1.png" alt="logo"></td>
+            <td><img src="C:\Users\User\Downloads\AI_1.png" alt="logo"></td>
+            <td><img src="C:\Users\User\Downloads\AI_1.png" alt="logo"></td>
+        
+        
+        </tr>
+        <tr align="center">
+            <td>tttt</td>
+            <td>tttttt</td>
+            <td>tttttttttttt</td>
+        </tr>
+    </table>
+   
+    <hr>    
+    
+    <a target="_blank" href="https://esprit.tn/">site esprit</a>
+    
+    <form>
+        <label for="nom">NOM</label>
+        <input type="text" id="nom">
+        <label for="prenom">PRENOM</label>
+        <input type="text" id="prenom" name="tt">
+        <input type="submit" onclick="verif()">
+    </form>
+   
+
+</body>
+
+<footer>
+    <a target="" href="mailto:contact@esprit.tn">Contactez nous</a>
+    <p>Adresse:Ghazella:Tunis</p>
+</footer>
+<script>
+    var b=document.querySelector("button");
+    b.addEventListener('dbclick',verif());
+    console.log(document.querySelector("input"));
+    //alert("test test sah sah");
+    console.log("test");
+    var arry=[5];
+    var arr1=Array(5);
+    //var arr2=Array(5.2);
+    var arr3=Array.of(5);
+
+    arry[0]="un";
+    arry[1]=1;
+    
+    console.log(arry);
+    console.log(arr1);
+    console.log(arr3);
+    function verif()
+{
+    var nom=document.getElementById("nom").value;
+    console.log(nom);
+    var prenom=document.getElementById("prenom").value;
+    console.log(prenom);
+    if(nom=="" || prenom=="")
+    {
+        alert("veuillez inserer le champs vide");
+    }
+    else
+    {
+        alert("bienvenue MR");
+    }
+}
+
+</script>
+
+</html>
