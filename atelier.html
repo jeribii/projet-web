@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+    <h1>INSPICTION DU SITE</h1>
+    <meta charset="UTF-8">
+</head>
+
+
+<body>
+
+ <form id="formulaire" onsubmit="return verif()">
+ <table >
+    <tr>
+        <td><label for="nom">Nom:</label></td>
+        <td><input type="text" id="nom" required></td>
+        <td><span id="enom" style="color: red;"></span></td>
+    </tr>
+    
+    <tr>
+        <td><label for="prenom">Prenom:</label></rd>
+        <td><input type="text" id="prenom" required></td>
+        <td><span id="eprenom" style="color: red;"></span></td>
+    </tr>
+    
+    <tr>
+        <td><label for="mail">Email:</label></td>
+        <td><input type="email" id="mail" required></td>
+        <td><span id="erreurmail" style="color: red;"></span></td>
+    </tr>
+    <tr>
+        <td><label for="tel">Téléphone:</label></td>
+        <td><input type="number" id="tel" required></td>
+        <td><span id="etel" style="color: red;"></span></td>
+    </tr>
+    <tr>
+        <td><label for="date">Date de naissance:</label></td>
+        <td><input type="date" id="date" required></td>
+        <td><span id="edate" style="color: red;"></span></td>
+    </tr>
+
+    <tr>
+        <td><label for="mdp">Mot de passe:</label></td>
+        <td><input type="password" id="mdp" required></td>
+        <td><span id="emdp" style="color: red;"></span></td>
+    </tr>
+    
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        
+        <td><button type="submit" id="boutton" >S'inscrire</button></td>
+    </tr>
+
+</table>
+</form>
+
+</body>
+
+<footer>
+
+    <hr>
+
+    <p>vous pouvez nous contacter par email: <a href="https://www.esprit.tn/contact" target="_blank">contact@esprit.tn</a></p>
+
+
+</footer>
+
+<script>
+var btn=document.getElementById("boutton");
+btn.addEventListener('click', verif);
+
+function validerdate()
+{
+
+    var v=document.getElementById("date").value;
+    console.log(v);
+    const date=new Date().toJSON().slice(0,10);
+    console.log(date);
+    if(v >= date)
+    {
+        alert("Veuillez verifier votre date de naissance");
+    }
+    else
+    {
+        alert("Bienvenue mr");
+    }
+}
+
+function verif()
+{
+    var regex_nom=/^[a-zA-Z]+$/;
+    var regex_num=/^\d{8}$/;
+    var regex_mail=/^\w+@{1}esprit.tn$/;
+    var regex_mdp=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+    var nom=document.getElementById("nom").value;
+    var prenom=document.getElementById("prenom").value;
+    var tel=document.getElementById("tel").value;
+    var mdp=document.getElementById("mdp").value;
+    var mail=document.getElementById("mail").value;
+
+    
+    if (!regex_nom.test(nom)) 
+    {
+        document.getElementById("enom").style.color="red";
+        document.getElementById("enom").innerText = "Le nom ne doit contenir que des lettres et doit avoir au moins 1 caractère.";
+    } 
+    else
+        {
+            document.getElementById("enom").style.color="green";
+            document.getElementById("enom").innerText = "correct";
+        }
+    
+     if (!regex_nom.test(prenom))
+    {
+        document.getElementById("eprenom").style.color="red";
+        document.getElementById("eprenom").innerText = "Prénom doit contenir au minimum 1 caractère. ";
+    }
+    else
+        {
+            document.getElementById("eprenom").style.color="green";
+            document.getElementById("eprenom").innerText = "correct";
+        }
+    if(!regex_mail.test(mail))
+    {
+        document.getElementById("erreurmail").style.color="red";
+        document.getElementById("erreurmail").innerText = "erreur de saisie";
+    }
+    else
+        {
+            document.getElementById("erreurmail").style.color="green";
+            document.getElementById("erreurmail").innerText ="correct";
+        }
+
+     if (!regex_num.test(tel))
+    {
+        document.getElementById("etel").style.color="red";
+        document.getElementById("etel").innerText = "Numéro de téléphone ne doit pas contenir des lettres et doit contenir exactement 8 chiffres.";
+        return false;
+    }
+    else
+        {
+            document.getElementById("etel").style.color="green";
+            document.getElementById("etel").innerText="correct";
+        }
+    
+    return true;
+
+}
+   
+</script>
+
+</html>
